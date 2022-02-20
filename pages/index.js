@@ -11,6 +11,7 @@ import { Store } from '../utils/Store';
 import ProductItem from '../components/ProductItem';
 import Carousel from 'react-material-ui-carousel';
 import useStyles from '../utils/styles';
+import data from '../utils/data';
 
 export default function Home(props) {
   const classes = useStyles();
@@ -49,7 +50,7 @@ export default function Home(props) {
       </Carousel>
       <Typography variant="h2">Popular Products</Typography>
       <Grid container spacing={3}>
-        {topRatedProducts.map((product) => (
+        {data.products.map((product) => (
           <Grid item md={4} key={product.name}>
             <ProductItem
               product={product}
