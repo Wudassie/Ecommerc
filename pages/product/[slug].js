@@ -69,7 +69,7 @@ export default function ProductScreen(props) {
   };
   useEffect(() => {
     fetchReviews();
-  }, []);
+  });
 
   if (!product) {
     return <div>Product Not Found</div>;
@@ -77,7 +77,7 @@ export default function ProductScreen(props) {
   const addToCartHandler = async () => {
     const existItem = state.cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
-    const { data } = await axios.get(`/api/products/${product._id}`);
+    //const { data } = await axios.get(`/api/products/${product._id}`);
     //this will not be used as digital items can't be out of stock.
     // if (data.countInStock < quantity) {
     //   window.alert('Sorry. Product is out of stock');

@@ -65,7 +65,6 @@ function PlaceOrder() {
           shippingAddress,
           paymentMethod,
           itemsPrice,
-          shippingPrice,
           taxPrice,
           totalPrice,
         },

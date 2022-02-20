@@ -65,7 +65,7 @@ function AdminOrders() {
       }
     };
     fetchData();
-  }, []);
+  });
   return (
     <Layout title="Orders">
       <Grid container spacing={1}>

@@ -14,14 +14,11 @@ import {
   TableRow,
   TableCell,
   Link,
-  Select,
-  MenuItem,
   Button,
   Card,
   List,
   ListItem,
 } from '@material-ui/core';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 
 function CartScreen() {
@@ -30,14 +27,14 @@ function CartScreen() {
   const {
     cart: { cartItems },
   } = state;
-  const updateCartHandler = async (item, quantity) => {
-    const { data } = await axios.get(`/api/products/${item._id}`);
-    if (data.countInStock < quantity) {
-      window.alert('Sorry. Product is out of stock');
-      return;
-    }
-    dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
-  };
+  // const updateCartHandler = async (item, quantity) => {
+  //   const { data } = await axios.get(`/api/products/${item._id}`);
+  //   if (data.countInStock < quantity) {
+  //     window.alert('Sorry. Product is out of stock');
+  //     return;
+  //   }
+  //   dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
+  // };
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
